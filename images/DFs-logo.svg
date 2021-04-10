@@ -1,0 +1,7 @@
+<svg  xmlns="http://www.w3.org/2000/svg" height="400" width="400" stroke="black">
+  <circle cx="200" cy="200" r="187.5"  stroke-width="25" fill-opacity="0"/>
+  <!-- <circle cx="200" cy="200" r="175" stroke-width="0" fill="white" fill-opacity="1"/> -->
+  <polygon class="fa" points="72,329.5 333,329.5 274,381 210,396 90.5,364 72,329.5" style="fill:inherit;stroke-width:0"/>
+  <polygon class="fa" id="left-tree" points="107,330 104,282.5 59.5,283 94,206 65,205 104.5,133 80.8,132.8 132.8,56.8 171.5,136.5 149.2,135.2 184,207.5 149.8,207 191.5,280.2 150.5,281.2 157.5,330" style="fill:inherit;stroke-width:0"/>
+  <polygon class="fa" id="right-tree" points="293,330 296,282.5 340.5,283 306,206 335,205 295.5,133 319.2,132.8 267.2,56.8 228.5,136.5 250.8,135.2 216,207.5 250.2,207 208.5,280.2 249.5,281.2 242.5,330" style="fill:inherit;stroke-width:0"/>
+</svg>

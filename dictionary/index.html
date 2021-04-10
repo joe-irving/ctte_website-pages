@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="icon" type="image/png" href="./images/Black clear background.png">
+    <title>DF Dictionary</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./css/center_teal.css">
+    <!-- <script type="text/javascript" scr="/scripts/dictionary-filter.js"></script> -->
+  </head>
+  <body>
+    <h1>
+      DF Dictionary
+    </h1>
+    <p>
+      The DF Movement can be a confusing place, so if you've heard some odd
+      words being thrown around there's a good chance one of them is here!
+    </p>
+    <p>If you want to change a definition then simply click on the linked term you want to change. If you want to add a definition then <a href="mailto:accessibility@spanthat.world">email</a> the Accessibility Reps, Tessa and Beth, who will get onto it.</p>
+    <div class="searchBox">
+      <input type="text" id="term" onkeyup="search()" placeholder="Search for definitions..." title="Type in a term"/>
+    </div>
+    <div class="boxInputs">
+      <ul>
+        <li>
+        <input id = "checkctte" onclick="boxClicked()" type="checkbox" checked/>
+        <label for = "checkctte" class="">Committee/Business</label>
+      </li>
+      <li>
+        <input id = "checksocial" onclick="boxClicked()" type="checkbox" checked>
+        <label for = "checksocial" class="">Social</label>
+      </li>
+      <li>
+        <input id = "checkwcf" onclick="boxClicked()" type="checkbox" checked>
+        <label for = "checkwcf" class="">Wider Woodcraft</label>
+      </li>
+      </ul>
+    </div>
+    <table id ="Dictionary">
+      <tr class="header">
+        <th id="termHeader"><strong>Term</strong></th>
+        <th id="defHeader"><strong>Definition</strong></th>
+        <th style="display:none">Hidden</th>
+        <th style="display:none">business</th>
+        <th style="display:none">social</th>
+        <th style="display:none">otherwcf</th>
+        <th style="display:none">search terms</th>
+      </tr>
+      <tr id="accessibility">
+        <td><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Accessibility&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Accessibility to%0d%0dHow easy it is for everyone to take part in something. Accessibility issues could be lots of steps at an event, venues being very far away, no lactose- or gluten-free food etc. %0d%0dBlue Skies,">Accessibility</a></td>
+        <td>How easy it is for everyone to take part in something. Accessibility issues could be lots of steps at an event, venues being very far away, no lactose- or gluten-free food etc. </td>
+        <td style="display:none"> </td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr id="accessibilityrepresentative">
+        <td><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Accessibility Representative&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Accessibility Representative to%0d%0dThe supervisory role of Accessibility Representative has the job of making sure all accessibility needs are considered. They work at making events and business available to as many people as possible. %0d%0dBlue Skies,">Accessibility Representative</a></td>
+        <td>The supervisory role of Accessibility Representative has the job of making sure all accessibility needs are considered. They work at making events and business available to as many people as possible. </td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee, access</td>
+      </tr>
+      <tr id="actions">
+        <td><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Actions&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Actions to%0d%0dWhen it is decided that something needs to be done at a business event, an "action" is recorded. This states what must be done and by whom, often giving a time frame. Committee and Non-Committee roles can have actions they must complete, on their own or in groups. It is the Laymembers' job to make sure everyone is completing their actions and coping with the workload. %0d%0dBlue Skies,">Actions</a></td>
+        <td>When it is decided that something needs to be done at a business event, an "action" is recorded. This states what must be done and by whom, often giving a time frame. Committee and Non-Committee roles can have actions they must complete, on their own or in groups. It is the Laymembers' job to make sure everyone is completing their actions and coping with the workload. </td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">committee, business</td>
+      </tr>
+      <tr>
+        <td id="affiliations"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Affiliations&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Affiliations to%0d%0dThis role works to build relationships and collaborate with other organisations. They are the point of contact for DF committee for collaborations and relations with the DF movement. %0d%0dBlue Skies,">Affiliations</a></td>
+        <td>This role works to build relationships and collaborate with other organisations. They are the point of contact for DF committee for collaborations and relations with the DF movement. </td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee, collaborations</td>
+      </tr>
+      <tr>
+        <td id="alternativevote"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Alternative vote&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Alternative vote to%0d%0dThe voter puts a number by each candidate, with a one for their favourite, 2 for their second favourite and so on. They can put numbers on as many or as few as they wish.%0d%0dIf more than half the voters have the same favourite candidate, that person is elected. If nobody gets half, the numbers provide instructions for what happens next.%0d%0dThe counters remove whoever came last and look at the ballot papers with that candidate as their favourite. Rather than throwing away these votes, they move each one to the voter’s second favourite candidate. This process repeated until one candidate has half of the votes and is elected.%0d%0dOther proportions, for example a two thirds majority can be used. %0d%0dBlue Skies,">Alternative vote</a></td>
+        <td>The voter puts a number by each candidate, with a one for their favourite, 2 for their second favourite and so on. They can put numbers on as many or as few as they wish.<br><br>If more than half the voters have the same favourite candidate, that person is elected. If nobody gets half, the numbers provide instructions for what happens next.<br><br>The counters remove whoever came last and look at the ballot papers with that candidate as their favourite. Rather than throwing away these votes, they move each one to the voter’s second favourite candidate. This process repeated until one candidate has half of the votes and is elected.<br><br>Other proportions, for example a two thirds majority can be used. </td>
+        <td style="display:none">AV</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">business, voting, democracy</td>
+      </tr>
+      <tr>
+        <td id="althing"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Althing&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Althing to%0d%0dThe DF business year starts and ends in early September, at our Annual General Meeting held at the residential business event, Althing. It is named after the world's oldest parliamentary system, that of Iceland. Here is where the DF committee, regional council and other key DF roles are elected, for which any member of the Woodcraft folk of DF age may stand. It is run by committee themselves, and expects around 60 people for one weekend, although the weather is usually nice so part camping can be nice so long as there is a large meeting room. DF committee and regional council are obliged to attend so do not pay.%0d%0dBlue Skies,">Althing</a></td>
+        <td>The DF business year starts and ends in early September, at our Annual General Meeting held at the residential business event, Althing. It is named after the world's oldest parliamentary system, that of Iceland. Here is where the DF committee, regional council and other key DF roles are elected, for which any member of the Woodcraft folk of DF age may stand. It is run by committee themselves, and expects around 60 people for one weekend, although the weather is usually nice so part camping can be nice so long as there is a large meeting room. DF committee and regional council are obliged to attend so do not pay.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">business, discussion, voting, committee</td>
+      </tr>
+      <tr>
+        <td id="annualgathering"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Annual Gathering&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Annual Gathering to%0d%0dWoodcraft Folk's yearly meeting which aims to pass motions to affect the direction of the movement. It is a two day long event with workshops and discussions.%0d%0dBlue Skies,">Annual Gathering</a></td>
+        <td>Woodcraft Folk's yearly meeting which aims to pass motions to affect the direction of the movement. It is a two day long event with workshops and discussions.</td>
+        <td style="display:none">AG</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">business</td>
+      </tr>
+      <tr>
+        <td id="bme"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for BME&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of BME to%0d%0dBlack and Minority Ethnic%0d%0dBlue Skies,">BME</a></td>
+        <td>Black and Minority Ethnic</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">acronyms</td>
+      </tr>
+      <tr>
+        <td id="business"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Business&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Business to%0d%0dDiscussions, workshops and planning about the running of the DF movement. This takes place at Althing, Regional Things and Mini Things within events.%0d%0dBlue Skies,">Business</a></td>
+        <td>Discussions, workshops and planning about the running of the DF movement. This takes place at Althing, Regional Things and Mini Things within events.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="campcluedo"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Camp Cluedo &Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Camp Cluedo  to%0d%0dThis is a game played throughout a social event. Each player picks three pieces of paper out of separate hats. One has a a place, normally somewhere on site. One has a person, someone else who is playing the game. The last has an object. The aim of the game is to "kill" the person you picked by having them voluntarily hold the object in the selected place. Once you have "killed" you person you then collect their cards and plan to "kill" their person. The game ends when you are "killed" or you "kill" the person who had the card with your name on it.%0d%0dBlue Skies,">Camp Cluedo </a></td>
+        <td>This is a game played throughout a social event. Each player picks three pieces of paper out of separate hats. One has a a place, normally somewhere on site. One has a person, someone else who is playing the game. The last has an object. The aim of the game is to "kill" the person you picked by having them voluntarily hold the object in the selected place. Once you have "killed" you person you then collect their cards and plan to "kill" their person. The game ends when you are "killed" or you "kill" the person who had the card with your name on it.</td>
+        <td style="display:none">Murder</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">games, camp, events</td>
+      </tr>
+      <tr>
+        <td id="campaigns"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Campaigns&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Campaigns to%0d%0dEvery two years the DF movements votes on a new campaign (for example refugee rights). This involves protests and publicising%0d%0dBlue Skies,">Campaigns</a></td>
+        <td>Every two years the DF movements votes on a new campaign (for example refugee rights). This involves protests and publicising</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="campaignsrepresentative"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Campaigns Representative&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Campaigns Representative to%0d%0d%0d%0dBlue Skies,">Campaigns Representative</a></td>
+        <td></td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="caucus"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Caucus&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Caucus to%0d%0dA meeting of people from a specific group to discuss their experience in life, on an event or problems they have faced.%0dIt is a good opportunity for some people to discuss things they would not feel comfortable talking about with others. Typical examples are the BME (Black and Minority Ethnic) caucus, LGBTQ+ (Lesbian, gay, bisexual, trans, queer and more) caucus, fat caucus and chronic illness caucus.%0d%0dBlue Skies,">Caucus</a></td>
+        <td>A meeting of people from a specific group to discuss their experience in life, on an event or problems they have faced.<br>It is a good opportunity for some people to discuss things they would not feel comfortable talking about with others. Typical examples are the BME (Black and Minority Ethnic) caucus, LGBTQ+ (Lesbian, gay, bisexual, trans, queer and more) caucus, fat caucus and chronic illness caucus.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="chaircarer"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Chair Carer&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Chair Carer to%0d%0dThis is a committee member whose job is to look after the DF chair. This is a small chair about 15 cm tall that should be looked after as if it were their own child. Although care is the Chair Carers main role, they also are expected to upload picture of the chair on its journey through life.%0d%0dBlue Skies,">Chair Carer</a></td>
+        <td>This is a committee member whose job is to look after the DF chair. This is a small chair about 15 cm tall that should be looked after as if it were their own child. Although care is the Chair Carers main role, they also are expected to upload picture of the chair on its journey through life.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="chairofdfcommittee"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Chair of DF Committee&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Chair of DF Committee to%0d%0dTheir job is to facilitate the running of committee. Often they are the initial person of contact for people outside of DFs and Woodcraft Folk.%0d%0dBlue Skies,">Chair of DF Committee</a></td>
+        <td>Their job is to facilitate the running of committee. Often they are the initial person of contact for people outside of DFs and Woodcraft Folk.</td>
+        <td style="display:none">Chair</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee, business, roles, role</td>
+      </tr>
+      <tr>
+        <td id="chairing"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Chairing&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Chairing to%0d%0dFacilitating a discussion and workshops to make sure that everyone has an equal opportunity to speak and participate. This mainly involves recording the order people wish to speak.%0d%0dBlue Skies,">Chairing</a></td>
+        <td>Facilitating a discussion and workshops to make sure that everyone has an equal opportunity to speak and participate. This mainly involves recording the order people wish to speak.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="clan"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Clan&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Clan to%0d%0dAn assigned group on an event which you tasks such as cooking, washing up and site tidy with. There is a clan rota on each event to make sure the workload is spread out evenly.%0d%0dBlue Skies,">Clan</a></td>
+        <td>An assigned group on an event which you tasks such as cooking, washing up and site tidy with. There is a clan rota on each event to make sure the workload is spread out evenly.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">events, camp</td>
+      </tr>
+      <tr>
+        <td id="co-opting"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Co-opting&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Co-opting to%0d%0dWhen there is a vacant role in DFs outside of Althing, DF committee appoints someone to the role through voting at Regional Things. This might be done if: a member of DF committee steps down, no one stands for a role at Althing, or a vote of no confidence in an elected member of DF committee is passed.%0d%0dBlue Skies,">Co-opting</a></td>
+        <td>When there is a vacant role in DFs outside of Althing, DF committee appoints someone to the role through voting at Regional Things. This might be done if: a member of DF committee steps down, no one stands for a role at Althing, or a vote of no confidence in an elected member of DF committee is passed.</td>
+        <td style="display:none">coopting</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee, voting</td>
+      </tr>
+      <tr>
+        <td id="committee"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Committee&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Committee to%0d%0dThe group of people elected at Althing (or co-opted at Regional Things) who facilitate the running of DFs. Committee vote on decisions that do not need to be made at Things.%0d%0dBlue Skies,">Committee</a></td>
+        <td>The group of people elected at Althing (or co-opted at Regional Things) who facilitate the running of DFs. Committee vote on decisions that do not need to be made at Things.</td>
+        <td style="display:none">ctte</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="communicationsrepresentative"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Communications Representative &Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Communications Representative  to%0d%0dThe Communications Rep is responsible for keeping all current and potential DFs updated about the movement. This involves making sure the website is updated regularly, maintaining an active presence on social media, and responding to emails promptly. They also manage the spanthatworld email accounts which are key to everyone being able to do their job properly.%0d%0dBlue Skies,">Communications Representative </a></td>
+        <td>The Communications Rep is responsible for keeping all current and potential DFs updated about the movement. This involves making sure the website is updated regularly, maintaining an active presence on social media, and responding to emails promptly. They also manage the spanthatworld email accounts which are key to everyone being able to do their job properly.</td>
+        <td style="display:none">Comms, coms, communications rep, comms rep</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="dfcamp"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for DF Camp&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of DF Camp to%0d%0dThe big event of the year, a weeks camping in the middle of August with a whole load of laid back workshops and lounging around in the sun. It is traditionally where we do a lot of the work on the projects and campaigns that DFs support, although there is much time for any kind of thing you want really. The dates have to chosen carefully to avoid exam results and other Woodcraft events of the year. Numbers vary a lot, but 110 is a good starting number to go for.%0d%0dBlue Skies,">DF Camp</a></td>
+        <td>The big event of the year, a weeks camping in the middle of August with a whole load of laid back workshops and lounging around in the sun. It is traditionally where we do a lot of the work on the projects and campaigns that DFs support, although there is much time for any kind of thing you want really. The dates have to chosen carefully to avoid exam results and other Woodcraft events of the year. Numbers vary a lot, but 110 is a good starting number to go for.</td>
+        <td style="display:none"></td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Events</td>
+      </tr>
+      <tr>
+        <td id="dfs"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for DFs&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of DFs to%0d%0dDFs (District Fellows) are the 16-20 year old members of the co-operative educational youth charity, The Woodcraft Folk, whose ideology is based on the principles of equality, peace, social justice and co-operation, with an emphasis on the empowerment of young people. %0d%0dBlue Skies,">DFs</a></td>
+        <td>DFs (District Fellows) are the 16-20 year old members of the co-operative educational youth charity, The Woodcraft Folk, whose ideology is based on the principles of equality, peace, social justice and co-operation, with an emphasis on the empowerment of young people. </td>
+        <td style="display:none">District Fellows</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="districts"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Districts&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Districts to%0d%0dThe way in which DFs are sorted into geographical groups. Each district will have group meetings, if sometimes irregular.%0d%0dBlue Skies,">Districts</a></td>
+        <td>The way in which DFs are sorted into geographical groups. Each district will have group meetings, if sometimes irregular.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="districtsrepresentitive"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Districts Representitive&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Districts Representitive to%0d%0d%0d%0dBlue Skies,">Districts Representitive</a></td>
+        <td></td>
+        <td style="display:none">Districts Rep</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="elfins"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Elfins&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Elfins to%0d%0dSix to nine year old people in the Woodcraft Folk. You become an Elfin on your 6th Birthday, and finish on your 10th.%0d%0dBlue Skies,">Elfins</a></td>
+        <td>Six to nine year old people in the Woodcraft Folk. You become an Elfin on your 6th Birthday, and finish on your 10th.</td>
+        <td style="display:none"></td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="envoi"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Envoi&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Envoi to%0d%0dThis is said or sung by Woodcraft Folk groups at camps and events. Members stand in a circle.%0d%0dThis shall be for a bond between us,%0dThat we are of one blood you and I;%0dThat we shall cry peace to all,%0dAnd claim kinship with every living thing;%0dThat we hate war, sloth and greed,%0dAnd love fellowship.%0dAnd that we shall go singing to the fashioning of a new world.%0d%0dPeace.%0d%0dBlue Skies,">Envoi</a></td>
+        <td>This is said or sung by Woodcraft Folk groups at camps and events. Members stand in a circle.<br><br>This shall be for a bond between us,<br>That we are of one blood you and I;<br>That we shall cry peace to all,<br>And claim kinship with every living thing;<br>That we hate war, sloth and greed,<br>And love fellowship.<br>And that we shall go singing to the fashioning of a new world.<br><br>Peace.</td>
+        <td style="display:none">Envoy, Creed</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">song, events, camp</td>
+      </tr>
+      <tr>
+        <td id="eventsrepresentative"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Events Representative&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Events Representative to%0d%0dThis is a one year role, typically done after being Shadow Events for one year. The Events Rep is the person that oversees the organisation of Events (both business and social), which involves booking venues and appointing and assisting coordinators.%0d%0dBlue Skies,">Events Representative</a></td>
+        <td>This is a one year role, typically done after being Shadow Events for one year. The Events Rep is the person that oversees the organisation of Events (both business and social), which involves booking venues and appointing and assisting coordinators.</td>
+        <td style="display:none">Events Rep</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="fairerfare"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Fairer Fare&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Fairer Fare to%0d%0dA means of spreading the costs of travel more evenly across participants of an event, so that the people who had more expensive travel pay less. %0d%0dBlue Skies,">Fairer Fare</a></td>
+        <td>A means of spreading the costs of travel more evenly across participants of an event, so that the people who had more expensive travel pay less. </td>
+        <td style="display:none">ff</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">trains, travel, cost, money</td>
+      </tr>
+      <tr>
+        <td id="firstaidfairy"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for First Aid Fairy&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of First Aid Fairy to%0d%0dThe individual responsible for all things first aid related in DFs. On events they are responsible for ensuring all first aiders are briefed and confident for shifts. Off events they are jointly responsible for first aid training (with the Training Rep) and making sure the first aid kit is fully stocked.%0d%0dBlue Skies,">First Aid Fairy</a></td>
+        <td>The individual responsible for all things first aid related in DFs. On events they are responsible for ensuring all first aiders are briefed and confident for shifts. Off events they are jointly responsible for first aid training (with the Training Rep) and making sure the first aid kit is fully stocked.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">safety</td>
+      </tr>
+      <tr>
+        <td id="fishbowl"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Fishbowl&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Fishbowl to%0d%0dA caucus that can be listened into but not contributed to by an additional audience. It is called a fish bowl because the audience forms a larger circle around the caucus to listen in. %0d%0dBlue Skies,">Fishbowl</a></td>
+        <td>A caucus that can be listened into but not contributed to by an additional audience. It is called a fish bowl because the audience forms a larger circle around the caucus to listen in. </td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">meeting, discussions</td>
+      </tr>
+      <tr>
+        <td id="fundraising"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Fundraising&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Fundraising to%0d%0dThe act of raising money for DFs. There is a fundraising role on committee and they work to find different mean for DFs to raise money outside of DFs.%0d%0dBlue Skies,">Fundraising</a></td>
+        <td>The act of raising money for DFs. There is a fundraising role on committee and they work to find different mean for DFs to raise money outside of DFs.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">money, role, committee</td>
+      </tr>
+      <tr>
+        <td id="generalcouncilrepresentative"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for General Council Representative&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of General Council Representative to%0d%0dMember of DF Committee that also attend National Woodcraft General Council meetings. They are the point of contact for both National Woodcraft Folk to communicate with DFs, and DFs to communicate with National Woodcraft folk%0d%0dBlue Skies,">General Council Representative</a></td>
+        <td>Member of DF Committee that also attend National Woodcraft General Council meetings. They are the point of contact for both National Woodcraft Folk to communicate with DFs, and DFs to communicate with National Woodcraft folk</td>
+        <td style="display:none">GC representative, GC rep</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="internationalfalconmovement"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for International Falcon Movement&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of International Falcon Movement to%0d%0dThe International Falcon Movement (Socialist Education International) is generally known as the "Umbrella Organisation" of The Woodcraft Folk (Which is the umbrella organisation of DFs)%0d%0dBlue Skies,">International Falcon Movement</a></td>
+        <td>The International Falcon Movement (Socialist Education International) is generally known as the "Umbrella Organisation" of The Woodcraft Folk (Which is the umbrella organisation of DFs)</td>
+        <td style="display:none">IFM SEI, IFM-SEI, IFM•SEI, IFM</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="jargonbuster"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Jargon Buster&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Jargon Buster to%0d%0dThis can be said or signed to ask what something means. The sign is to wave your hand over your face with an open palm facing you.%0d%0dBlue Skies,">Jargon Buster</a></td>
+        <td>This can be said or signed to ask what something means. The sign is to wave your hand over your face with an open palm facing you.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="ke"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for KE&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of KE to%0d%0dKeeper of the Equipment (Keeper of the Kit). Their job is to make sure events have all the necessary equipment in all the right places. They maintain and make sure it is being used correctly. %0d%0dBlue Skies,">KE</a></td>
+        <td>Keeper of the Equipment (Keeper of the Kit). Their job is to make sure events have all the necessary equipment in all the right places. They maintain and make sure it is being used correctly. </td>
+        <td style="display:none">KK</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="kg"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for KG&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of KG to%0d%0dThe Keeper of the Garbage. This can be seen as the best and worst job to have on camp. It is your job to keep the toilets clean, the rubbish system working and the camp tidy. Why also the best you ask? It gets you out of doing food prep!%0d%0dBlue Skies,">KG</a></td>
+        <td>The Keeper of the Garbage. This can be seen as the best and worst job to have on camp. It is your job to keep the toilets clean, the rubbish system working and the camp tidy. Why also the best you ask? It gets you out of doing food prep!</td>
+        <td style="display:none"></td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="kp"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for KP&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of KP to%0d%0dKeeper of the Provender. They facilitate the ordering and preparing of food on an event.%0d%0dBlue Skies,">KP</a></td>
+        <td>Keeper of the Provender. They facilitate the ordering and preparing of food on an event.</td>
+        <td style="display:none">Food person</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="laymember"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Lay member&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Lay member to%0d%0dThere are two lay member positions on committee that are typically elected alternatively with 2 year long terms. The lay members provide support for any member if they feel they are struggling in their role. They make up two of the four pastoral care roles within committee. If they wish to, they can create an project for themselves, or if the know of a DF project that is running outside of committee they can help members running the project to maintain a link between the project and committee. The Odd Lay Member is elected on an odd year, and the Even Lay Member is elected on an even year.%0d%0dBlue Skies,">Lay member</a></td>
+        <td>There are two lay member positions on committee that are typically elected alternatively with 2 year long terms. The lay members provide support for any member if they feel they are struggling in their role. They make up two of the four pastoral care roles within committee. If they wish to, they can create an project for themselves, or if the know of a DF project that is running outside of committee they can help members running the project to maintain a link between the project and committee. The Odd Lay Member is elected on an odd year, and the Even Lay Member is elected on an even year.</td>
+        <td style="display:none">Odd Lay Member, Even Lay Member, Odd laymember, even laymember, odd lay-member, even lay-member</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="linkyourhands"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Link your hands&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Link your hands to%0d%0dA song typically sung at the end of events with the lyrics:%0d%0dLink your hands together%0dA circle we make%0dThis bond of a friendship%0dNo power can break%0dLet's all sing together%0dIn one mighty throng%0dShould any be weary%0dWe'll help them along%0dShould any be weary%0dWe'll help them along%0d%0dBlue Skies,">Link your hands</a></td>
+        <td>A song typically sung at the end of events with the lyrics:<br><br>Link your hands together<br>A circle we make<br>This bond of a friendship<br>No power can break<br>Let's all sing together<br>In one mighty throng<br>Should any be weary<br>We'll help them along<br>Should any be weary<br>We'll help them along</td>
+        <td style="display:none">circle song</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="londonliaison"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for London Liaison&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of London Liaison to%0d%0dLondon Liaison is the person who keeps in contact with the London Folk and goes to the regional meetings to keep good lines of communication between DFs and the London Region Folk. London Liaison also organises social events for London DFs throughout the year.%0d%0dBlue Skies,">London Liaison</a></td>
+        <td>London Liaison is the person who keeps in contact with the London Folk and goes to the regional meetings to keep good lines of communication between DFs and the London Region Folk. London Liaison also organises social events for London DFs throughout the year.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="merrymoot"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Merry Moot&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Merry Moot to%0d%0dThe performance at the end of an event where people show off their ranging talents. From signing to milk drinking contest, whatever you want to do you'll be welcomed%0d%0dBlue Skies,">Merry Moot</a></td>
+        <td>The performance at the end of an event where people show off their ranging talents. From signing to milk drinking contest, whatever you want to do you'll be welcomed</td>
+        <td style="display:none">Camp Show</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="mest-up"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for MEST-UP&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of MEST-UP to%0d%0dStanding for Mediation, Education Support Team Umbrella Program, MEST-UP is a programme of workshops delivered by a trained and impartial team of DF's that aim to educate people on event, as well as provide emotional and conflict resolving information to aid the mental wellbeing and enjoyment of camp to all of the individuals there; equally and unbiased.%0d%0dBlue Skies,">MEST-UP</a></td>
+        <td>Standing for Mediation, Education Support Team Umbrella Program, MEST-UP is a programme of workshops delivered by a trained and impartial team of DF's that aim to educate people on event, as well as provide emotional and conflict resolving information to aid the mental wellbeing and enjoyment of camp to all of the individuals there; equally and unbiased.</td>
+        <td style="display:none">MEST UP</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="minithing"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Mini Thing&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Mini Thing to%0d%0dThis is a small business experience within a social event. It gives people who haven't had any experience of the running of the DF movement an idea of what it is like, hopefully encouraging them to attend Regional Things throughout their time at DFs%0d%0dBlue Skies,">Mini Thing</a></td>
+        <td>This is a small business experience within a social event. It gives people who haven't had any experience of the running of the DF movement an idea of what it is like, hopefully encouraging them to attend Regional Things throughout their time at DFs</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="morningcry"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Morning Cry&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Morning Cry to%0d%0dThe way in which people are woken in the morning on events. The traditional call is:%0d%0dAll Yee who dwell within this camp give ear.%0dAwake, arise for the earth has cast of the dark cap of night%0dand is arrayed in the bright garments of day%0dAll yee who dwell within this camp awake arise%0d%0dAlthough there are inevitably variations of this that develop%0d%0dBlue Skies,">Morning Cry</a></td>
+        <td>The way in which people are woken in the morning on events. The traditional call is:<br><br>All Yee who dwell within this camp give ear.<br>Awake, arise for the earth has cast of the dark cap of night<br>and is arrayed in the bright garments of day<br>All yee who dwell within this camp awake arise<br><br>Although there are inevitably variations of this that develop</td>
+        <td style="display:none">Morning Call</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="motion"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Motion&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Motion to%0d%0dA suggested change that is discussed and voted on at Althing, or for National Woodcraft Folk AMG%0d%0dBlue Skies,">Motion</a></td>
+        <td>A suggested change that is discussed and voted on at Althing, or for National Woodcraft Folk AMG</td>
+        <td style="display:none">Motions</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="old-new"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Old-New&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Old-New to%0d%0dThe oft-forgotten event of the year, with good reason. It is where the Old DF committee handover all their responsibilities and current tasks to the New DF committee, as do all the other roles elected at Althing. Only elected members go, and it has in  recent years been held at one of those people's houses, so organised by them, with a small fee being given to the owners of the house for its use.%0d%0dBlue Skies,">Old-New</a></td>
+        <td>The oft-forgotten event of the year, with good reason. It is where the Old DF committee handover all their responsibilities and current tasks to the New DF committee, as do all the other roles elected at Althing. Only elected members go, and it has in  recent years been held at one of those people's houses, so organised by them, with a small fee being given to the owners of the house for its use.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="pioneers"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Pioneers&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Pioneers to%0d%0d10 to 12 year old people in the Woodcraft Folk. You become a Pioneer on your 10th Birthday and finish on your 13th.%0d%0dBlue Skies,">Pioneers</a></td>
+        <td>10 to 12 year old people in the Woodcraft Folk. You become a Pioneer on your 10th Birthday and finish on your 13th.</td>
+        <td style="display:none"></td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="regionalthings"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Regional Things&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Regional Things to%0d%0dThese are business events that happen 3 times a year. They are where DFs discuss important issues relating to the DF movement and the wider world.%0d%0dBlue Skies,">Regional Things</a></td>
+        <td>These are business events that happen 3 times a year. They are where DFs discuss important issues relating to the DF movement and the wider world.</td>
+        <td style="display:none">North East Thing, North West Thing, South East Thing, South West Thing, London Thing, Scottish Thing, Welsh Thing, Midlands Thing, Eastern Thing</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="safeguarding"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Safeguarding&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Safeguarding to%0d%0dThe broader preventative and precautionary approach to planning and procedures that need to be in place to protect DFs from any potential harm or damage.%0d%0dBlue Skies,">Safeguarding</a></td>
+        <td>The broader preventative and precautionary approach to planning and procedures that need to be in place to protect DFs from any potential harm or damage.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="safeguardingrepresentative"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Safeguarding Representative&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Safeguarding Representative to%0d%0dThe DF Committee member who is responsible for insuring the safeguarding policies are upheld and kept up to date. They keep records of concerns and issues and often communicate with Central Woodcraft to help work towards solutions. They also organise getting DBS checks completed for DFs in positions of responsibility. The Safeguarding rep works closely with MEST-UP.%0d%0dBlue Skies,">Safeguarding Representative</a></td>
+        <td>The DF Committee member who is responsible for insuring the safeguarding policies are upheld and kept up to date. They keep records of concerns and issues and often communicate with Central Woodcraft to help work towards solutions. They also organise getting DBS checks completed for DFs in positions of responsibility. The Safeguarding rep works closely with MEST-UP.</td>
+        <td style="display:none">Safeguarding rep</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="secretfriends"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Secret friends&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Secret friends to%0d%0dA game played throughout an event where names are put into a hat, or other suitable vessel, and you randomly select another person's name (if you pick up your own put it back!) and have to secretly do nice things for them. Maybe you'll send someone to give them a hug from you, find them a nice rock, make them a friendship bracelet or get creative with a treasure hunt. The only limit is your creativity. At the end of the event it is up to you whether you want your secret friend to know who you are.%0d%0dBlue Skies,">Secret friends</a></td>
+        <td>A game played throughout an event where names are put into a hat, or other suitable vessel, and you randomly select another person's name (if you pick up your own put it back!) and have to secretly do nice things for them. Maybe you'll send someone to give them a hug from you, find them a nice rock, make them a friendship bracelet or get creative with a treasure hunt. The only limit is your creativity. At the end of the event it is up to you whether you want your secret friend to know who you are.</td>
+        <td style="display:none"></td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="secretary"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Secretary&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Secretary to%0d%0dThe Secretary's job is to facilitate the smooth running of DF Business. They, in coordination with the Chair and Vice Chair, must ensure an agenda is prepared for every meeting. Another aspect of their role is making sure that the general consensus of the movement at large, as laid down at Althing, is being followed through the actions taken by committee and other bodies within the movement. The Secretary also creates, edits, and releases public minutes taken at meetings, and is responsible for the maintaining of the movement's policy documents and constitutional documents (The Constitution and Democratic Procedures). Finally, the secretary oversees the DF membership database.%0d%0dBlue Skies,">Secretary</a></td>
+        <td>The Secretary's job is to facilitate the smooth running of DF Business. They, in coordination with the Chair and Vice Chair, must ensure an agenda is prepared for every meeting. Another aspect of their role is making sure that the general consensus of the movement at large, as laid down at Althing, is being followed through the actions taken by committee and other bodies within the movement. The Secretary also creates, edits, and releases public minutes taken at meetings, and is responsible for the maintaining of the movement's policy documents and constitutional documents (The Constitution and Democratic Procedures). Finally, the secretary oversees the DF membership database.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="shadoweventsrepresentative"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Shadow Events Representative&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Shadow Events Representative to%0d%0dThe Shadow Events Rep is a one year role, typically done with the intention of then doing Events for one year afterwards. The Shadow Events Rep assists and learns from the Events Rep.%0d%0dBlue Skies,">Shadow Events Representative</a></td>
+        <td>The Shadow Events Rep is a one year role, typically done with the intention of then doing Events for one year afterwards. The Shadow Events Rep assists and learns from the Events Rep.</td>
+        <td style="display:none">Shadow Events Rep</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="shadowtreasurer"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Shadow treasurer&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Shadow treasurer to%0d%0dThis role has a one year term in which they learn from and assist the current Treasurer, with the goal of taking over from the current Treasurer at the next years althing. The constitution states that only DFs who have previously held the role of Shadow Treasurer can become Treasurer.%0d%0dBlue Skies,">Shadow treasurer</a></td>
+        <td>This role has a one year term in which they learn from and assist the current Treasurer, with the goal of taking over from the current Treasurer at the next years althing. The constitution states that only DFs who have previously held the role of Shadow Treasurer can become Treasurer.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="singletransferablevote"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Single transferable vote&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Single transferable vote to%0d%0dA voting system where you vote by listing the candidates you want to get into a position in order of preference. A candidate gets in if they have a predetermined proportion of the 1st preference votes, if not then the candidate with the lowest proportion of votes gets eliminated and the 2nd preference of voters who had the eliminated candidate as a first choice is taken into consideration. Hence the vote has been transferred. This continues until a candidate passes the predetermined proportion. If this does not happen then the vote ca be considered inconclusive.%0d%0dBlue Skies,">Single transferable vote</a></td>
+        <td>A voting system where you vote by listing the candidates you want to get into a position in order of preference. A candidate gets in if they have a predetermined proportion of the 1st preference votes, if not then the candidate with the lowest proportion of votes gets eliminated and the 2nd preference of voters who had the eliminated candidate as a first choice is taken into consideration. Hence the vote has been transferred. This continues until a candidate passes the predetermined proportion. If this does not happen then the vote ca be considered inconclusive.</td>
+        <td style="display:none">STV</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="spanthatworldwithmusic"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Span That World With Music&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Span That World With Music to%0d%0dNot events like the others, but STWWM/STWWC are things to do in your own region. STWWM is encouragement to run your own music gig/acoustic night/whatever to promote DFs to your friends or strangers. Similarly STWWC is an excuse to dress up a bit differently, however you like, and explain DFs to the people who will inevitably ask questions like “Why are you dressed up like a jedi smurf?” or something like that. They are fundraising events, so as much for DFs as well as the general public.%0d%0dBlue Skies,">Span That World With Music</a></td>
+        <td>Not events like the others, but STWWM/STWWC are things to do in your own region. STWWM is encouragement to run your own music gig/acoustic night/whatever to promote DFs to your friends or strangers. Similarly STWWC is an excuse to dress up a bit differently, however you like, and explain DFs to the people who will inevitably ask questions like “Why are you dressed up like a jedi smurf?” or something like that. They are fundraising events, so as much for DFs as well as the general public.</td>
+        <td style="display:none">Span That World With Costume, STWWM, STWWC</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="springawakening"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Spring awakening&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Spring awakening to%0d%0dBilled as the DF's 'back to basics' event, it is the first camping event after the new year. There is usually training of some kind, such as first aid or leadership, and more traditional workshops like bush craft, site conservation or digging a really deep hole. It is held in the schools' Easter holidays and lasts for 4 nights.%0d%0dBlue Skies,">Spring awakening</a></td>
+        <td>Billed as the DF's 'back to basics' event, it is the first camping event after the new year. There is usually training of some kind, such as first aid or leadership, and more traditional workshops like bush craft, site conservation or digging a really deep hole. It is held in the schools' Easter holidays and lasts for 4 nights.</td>
+        <td style="display:none">SA</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="sustainabilityrepresentative"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Sustainability Representative&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Sustainability Representative to%0d%0dThe Sustainability Rep works to promote environmentally friendly actions within DFs. This could be from making sure events are planned to use minimal single use plastic, or advertising beach clean up events or similar.%0d%0dBlue Skies,">Sustainability Representative</a></td>
+        <td>The Sustainability Rep works to promote environmentally friendly actions within DFs. This could be from making sure events are planned to use minimal single use plastic, or advertising beach clean up events or similar.</td>
+        <td style="display:none">Sustainability Rep</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="temperaturecheck"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Temperature check&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Temperature check to%0d%0dA way that the feeling of a group can quickly be checked. People are asked to do a temperature check and positive responses shake both hands horizontally high up, and for negative it's down low. This is often done when a meeting or workshop has dragged on for a very long time%0d%0dBlue Skies,">Temperature check</a></td>
+        <td>A way that the feeling of a group can quickly be checked. People are asked to do a temperature check and positive responses shake both hands horizontally high up, and for negative it's down low. This is often done when a meeting or workshop has dragged on for a very long time</td>
+        <td style="display:none">wavey hand</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="thing"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Thing&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Thing to%0d%0dA Thing is a weekend long business event where DFs discuss important issues relating to the DF movement and the wider world%0d%0dBlue Skies,">Thing</a></td>
+        <td>A Thing is a weekend long business event where DFs discuss important issues relating to the DF movement and the wider world</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="training"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Training&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Training to%0d%0dThe role of training on committee organises any training that happens within DFs. This training can either be run internally by other DFs, or externally by other organisations. For example, for first aid training they will contact an external body to come to an event and run a training session.%0d%0dBlue Skies,">Training</a></td>
+        <td>The role of training on committee organises any training that happens within DFs. This training can either be run internally by other DFs, or externally by other organisations. For example, for first aid training they will contact an external body to come to an event and run a training session.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="treasurer"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Treasurer&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Treasurer to%0d%0dThe person who is in charge of managing the finances of DFs. They make sure the money going in and out of the DFs' bank account is all accounted for; they keep records of how money has been spent and where funding for DFs has come from. They are helped by the Shadow Treasurer.%0d%0dBlue Skies,">Treasurer</a></td>
+        <td>The person who is in charge of managing the finances of DFs. They make sure the money going in and out of the DFs' bank account is all accounted for; they keep records of how money has been spent and where funding for DFs has come from. They are helped by the Shadow Treasurer.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="venturercamp"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Venturer camp&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Venturer camp to%0d%0dA once three yearly national camp for Venturers (13 to 15 year old Woodcrafters) with attendance in the hundreds. Often heavily organised and run by DFs and Venturers. It is on every (3n + 1)th year. For example, if n = 800, the Venturer Camp will fall on the year 2401 (=3x800+1)%0d%0dBlue Skies,">Venturer camp</a></td>
+        <td>A once three yearly national camp for Venturers (13 to 15 year old Woodcrafters) with attendance in the hundreds. Often heavily organised and run by DFs and Venturers. It is on every (3n + 1)th year. For example, if n = 800, the Venturer Camp will fall on the year 2401 (=3x800+1)</td>
+        <td style="display:none">Vcamp, V Camp</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="vicechair"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Vice Chair&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Vice Chair to%0d%0dThe role of vice chair is elected at Old/New by the rest of committee and will be taken by someone already elected to a committee role. Their role is to support the Chair by helping organise business and keeping committee things ticking over. They are also another port of call for DFs, committee or otherwise, to discuss any issues. %0d%0dBlue Skies,">Vice Chair</a></td>
+        <td>The role of vice chair is elected at Old/New by the rest of committee and will be taken by someone already elected to a committee role. Their role is to support the Chair by helping organise business and keeping committee things ticking over. They are also another port of call for DFs, committee or otherwise, to discuss any issues. </td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="voteofnoconfidence"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Vote of no confidence&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Vote of no confidence to%0d%0dWhen members feel the person filling a role is doing an inadequate job, or is harming the DF movement, they can call for there to be a vote on whether that person remains in the role. Any member of the movement can call a vote of no confidence in an elected role in DFs. Committee votes on this. A vote of no confidence is automatically triggered if an elected role does not submit a quarterly report twice in a row. A two thirds majority is required for success.%0d%0dBlue Skies,">Vote of no confidence</a></td>
+        <td>When members feel the person filling a role is doing an inadequate job, or is harming the DF movement, they can call for there to be a vote on whether that person remains in the role. Any member of the movement can call a vote of no confidence in an elected role in DFs. Committee votes on this. A vote of no confidence is automatically triggered if an elected role does not submit a quarterly report twice in a row. A two thirds majority is required for success.</td>
+        <td style="display:none">VNC</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="webfairy"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Web Fairy&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Web Fairy to%0d%0dThe web fairy is responsible for everything directly to do with the running of the website spanthatworld.com. That involves editing the site, making sure the people who need access have access and making sure it's hosted properly.%0d%0dBlue Skies,">Web Fairy</a></td>
+        <td>The web fairy is responsible for everything directly to do with the running of the website spanthatworld.com. That involves editing the site, making sure the people who need access have access and making sure it's hosted properly.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none">false</td>
+        <td style="display:none">Committee</td>
+      </tr>
+      <tr>
+        <td id="winterwonderland"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Winter Wonderland&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Winter Wonderland to%0d%0dThis is the event held on 27th to 30th December in a hostel or bunkhouse. In previous years there have been two events, Winter Wonderland North and South. In 2018 this was changed to be a combined event of festivity and joy%0d%0dBlue Skies,">Winter Wonderland</a></td>
+        <td>This is the event held on 27th to 30th December in a hostel or bunkhouse. In previous years there have been two events, Winter Wonderland North and South. In 2018 this was changed to be a combined event of festivity and joy</td>
+        <td style="display:none">wwl</td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="woodies"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Woodies&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Woodies to%0d%0dA casual term given to people who are part of the Woodcraft Folk%0d%0dBlue Skies,">Woodies</a></td>
+        <td>A casual term given to people who are part of the Woodcraft Folk</td>
+        <td style="display:none"></td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="workersbeer"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Workers Beer&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Workers Beer to%0d%0dThe Workers Beer Company runs bars at events in the UK and Ireland. We have been operating since 1986 and during this time have worked at most of the major festivals including Glastonbury, Reading, Leeds, Latitude, Longtitude, Electric Picnic, Slane Castle and the Fleadhs.%0d%0dAll the frontline staff in Workers Beer Company bars are volunteers. They are from trade union branches, the labour movement, grassroots organisations, community groups and charities. For every hour they work money is donated to the organisations, campaigns and charities they support. This was, and still is, a pioneering model that both raises funds and inspires people.%0d%0dWoodcraft DFs sometimes volunteer for them.%0d%0dBlue Skies,">Workers Beer</a></td>
+        <td>The Workers Beer Company runs bars at events in the UK and Ireland. We have been operating since 1986 and during this time have worked at most of the major festivals including Glastonbury, Reading, Leeds, Latitude, Longtitude, Electric Picnic, Slane Castle and the Fleadhs.<br><br>All the frontline staff in Workers Beer Company bars are volunteers. They are from trade union branches, the labour movement, grassroots organisations, community groups and charities. For every hour they work money is donated to the organisations, campaigns and charities they support. This was, and still is, a pioneering model that both raises funds and inspires people.<br><br>Woodcraft DFs sometimes volunteer for them.</td>
+        <td style="display:none"></td>
+        <td style="display:none">true</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+      <tr>
+        <td id="zine"><a href="mailto:accessibility@spanthatworld.com?subject=Change Definition for Zine&Body=Hi Tessa and Joe,%0d%0dCould you change the definition of Zine to%0d%0dThe DF movements magazine%0d%0dBlue Skies,">Zine</a></td>
+        <td>The DF movements magazine</td>
+        <td style="display:none"></td>
+        <td style="display:none">false</td>
+        <td style="display:none">true</td>
+        <td style="display:none">false</td>
+        <td style="display:none"></td>
+      </tr>
+    </table>
+    <p id="ahh">AHHHHHHHHHHHHHHHHHHHH</p>
+    <script src="scripts/dictionary-filter.js"></script>
+  </body>
+</html>

@@ -1,0 +1,233 @@
+* {
+  box-sizing: border-box;
+  font-family:sans-serif;
+  font-weight:400;
+  color: #474747;
+  font-size: 18px;
+}
+*:focus {
+    outline: none;
+}
+*[title]:hover:after {
+  font-size: 50px;
+}
+html {
+    background:url('../images/wild_path.jpg') #ffffff;
+    background-size:cover;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    min-width: 530px;
+}
+
+body {
+    background:rgba(255,255,255,0.85);
+    width: 80%;
+    border-radius: 100px;
+    margin: 30px auto 1000px auto;
+    padding: 20px;
+    font-family: "Raleway", sans-serif;
+    font-weight: 100;
+}
+h1{
+  font-size: 50px;
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 15px;
+}
+h2{
+  font-size: 40px;
+  font-weight: 100;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 15px;
+}
+h3{
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 15px;
+}
+h4{
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 15px;
+}
+h5{
+  font-size: 20px;
+  font-weight: 200;
+  padding-left: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 15px;
+}
+a{
+  color: #008080;
+  text-decoration: none;
+  transition: color 0.5s ease;
+}
+a:hover{
+  color: #7a7a7a;
+  text-decoration: none;
+}
+p{
+  padding: 15px;
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 25px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+}
+input[type=checkbox]{
+  display: none;
+}
+label{
+  font-size: 16px;
+  padding: 5px 10px;
+  /* border: 1px solid #008080; */
+  border-radius: 15px;
+  margin: 5px 25px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+}
+input[type=checkbox] + label{
+  background-color: #008080;
+  color: #ffffff;
+  height: 40px;
+  width:1 auto;
+  margin: 12px auto;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  cursor: pointer;
+  -webkit-user-select: none;  /* Chrome 49+ */
+  -moz-user-select: none;     /* Firefox 43+ */
+}
+input[type=checkbox]:checked + label{
+  background-color: #008080;
+  color: #ffffff;
+}
+input[type=checkbox]:not(:checked) + label{
+  background-color: #005959;
+  color: white;
+  text-decoration:line-through;
+}
+input[type=checkbox]:hover + label{
+  background-color: #005959;
+  color: white;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+::-webkit-scrollbar-track-piece{
+  display: none;
+}
+#term {
+  width: 100%;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin: 12px 0px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 1px;
+}
+table {
+  border-collapse: collapse;
+  width: 90%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+  margin: 0 auto;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+}
+table th, table td {
+  text-align: left;
+  padding: 12px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 1px;
+}
+table tr {
+  border-bottom: 1px solid #ddd;
+}
+table tr th {
+  background-color: rgb(151,151,151,0.4);
+}
+#termHeader{
+  width: 15%;
+}
+#ahh{
+  font-size: 50px;
+  display:none;
+}
+div.menu{
+  display: block;
+  overflow: auto;
+  margin: 15px auto;
+  list-style:none;
+  position:relative;
+  padding: 10px
+}
+.menu a:hover{
+  background-color: rgb(0,128,128, 0.2);
+}
+.menu a{
+  background-color: rgb(0,128,128, 0);
+  color: #000000;
+  height: 40px;
+  width:1 auto;
+  margin: 12px auto;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  cursor: pointer;
+  -webkit-user-select: none;  /* Chrome 49+ */
+  -moz-user-select: none;     /* Firefox 43+ */
+  font-size: 25px;
+  padding: 5px 10px;
+  border: 1px solid rgb(0,128,128, 0.1);
+  border-radius: 15px;
+  margin: 5px 25px;
+  font-weight: 600;
+  font-family: "Raleway", sans-serif;
+}
+.menu li{
+  display: inline-block;
+  margin: 15px auto;
+  position: relative;
+  align: center;
+}
+.menu ul{
+  display: flex;
+  justify-content: center;
+  align-items: center
+  width: auto;
+  margin: 0px auto;
+}

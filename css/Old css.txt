@@ -1,0 +1,14 @@
+/* * {
+  box-sizing: border-box;
+  font-family:sans-serif;
+  font-weight:400;
+  color: #474747;
+  font-size: 18px;
+  -vendor-background-clip: border-box;
+}
+*:focus {
+    outline: none;
+}
+*[title]:hover:after {
+  font-size: 50px;
+} */
